@@ -134,7 +134,7 @@ def data_goodrun_lumi(ds):
     return run number with a match and their corresponding luminosity
     '''
     # open the file which have run number <-> luminosity correspondancy and store only information that we need: run number and luminosity
-    with open('luminosity/run2018_lumi.csv', newline='') as csvfile:
+    with open('/afs/cern.ch/user/p/pdebryas/HNL_analysis/HNLTauPrompt/CoffeaAnalysis/luminosity/run2018_lumi.csv', newline='') as csvfile:
         csv_reader = csv.reader(filter(lambda row: row[0]!='#', csvfile))
         run2018_lumi = list(csv_reader)
     run2018_run_lumi = []
@@ -144,7 +144,7 @@ def data_goodrun_lumi(ds):
 
     #then found the run numbers of the NanoAOD samples (stored in run_Data_ds.csv file)
     run_data = []
-    with open('luminosity/run_Data/run_'+ds+'.csv', newline='') as csvfile:
+    with open('/afs/cern.ch/user/p/pdebryas/HNL_analysis/HNLTauPrompt/CoffeaAnalysis/luminosity/run_Data/run_Data_'+ds+'.csv', newline='') as csvfile:
         csv_reader = csv.reader(filter(lambda row: row[0]!='#', csvfile))
         run_data.append(list(csv_reader))
     run_data = np.concatenate(run_data).astype(float)

@@ -44,7 +44,7 @@ of.cd()
 
 for e in fileHandles[0].GetListOfKeys():
     name = e.GetName()
-    print("Merging" + str(name))
+    print("Merging " + str(name))
     obj = e.ReadObj()
     cl = ROOT.TClass.GetClass(e.GetClassName())
     inputs = ROOT.TList()
@@ -53,43 +53,47 @@ for e in fileHandles[0].GetListOfKeys():
         obj = obj.CloneTree(-1, "fast" if goFast else "")
         branchNames = set([x.GetName() for x in obj.GetListOfBranches()])
     for fh in fileHandles[1:]:
-        otherObj = fh.GetListOfKeys().FindObject(name).ReadObj()
-        inputs.Add(otherObj)
-        if isTree and obj.GetName() == 'Events':
-            otherObj.SetAutoFlush(0)
-            otherBranches = set([x.GetName()
-                                 for x in otherObj.GetListOfBranches()])
-            missingBranches = list(branchNames - otherBranches)
-            additionalBranches = list(otherBranches - branchNames)
-            print("missing: " + str(missingBranches) + "\n Additional:" + str(additionalBranches))
-            for br in missingBranches:
-                # fill "Other"
-                zeroFill(otherObj, br, obj.GetListOfBranches().FindObject(br))
-            for br in additionalBranches:
-                # fill main
-                branchNames.add(br)
-                zeroFill(obj, br, otherObj.GetListOfBranches().FindObject(br))
-            # merge immediately for trees
-        if isTree and obj.GetName() == 'Runs':
-            otherObj.SetAutoFlush(0)
-            otherBranches = set([x.GetName()
-                                 for x in otherObj.GetListOfBranches()])
-            missingBranches = list(branchNames - otherBranches)
-            additionalBranches = list(otherBranches - branchNames)
-            print("missing: " + str(missingBranches) + "\n Additional:" + str(additionalBranches))
-            for br in missingBranches:
-                # fill "Other"
-                zeroFill(otherObj, br, obj.GetListOfBranches(
-                ).FindObject(br), allowNonBool=True)
-            for br in additionalBranches:
-                # fill main
-                branchNames.add(br)
-                zeroFill(obj, br, otherObj.GetListOfBranches(
-                ).FindObject(br), allowNonBool=True)
-            # merge immediately for trees
-        if isTree:
-            obj.Merge(inputs, "fast" if goFast else "")
-            inputs.Clear()
+        if fh.GetListOfKeys().Contains(name):
+            otherObj = fh.GetListOfKeys().FindObject(name).ReadObj()
+            inputs.Add(otherObj)
+            if isTree and obj.GetName() == 'Events':
+                otherObj.SetAutoFlush(0)
+                otherBranches = set([x.GetName()
+                                    for x in otherObj.GetListOfBranches()])
+                missingBranches = list(branchNames - otherBranches)
+                additionalBranches = list(otherBranches - branchNames)
+                print("missing: " + str(missingBranches) + "\n Additional:" + str(additionalBranches))
+                for br in missingBranches:
+                    # fill "Other"
+                    zeroFill(otherObj, br, obj.GetListOfBranches().FindObject(br))
+                for br in additionalBranches:
+                    # fill main
+                    branchNames.add(br)
+                    zeroFill(obj, br, otherObj.GetListOfBranches().FindObject(br))
+                # merge immediately for trees
+            if isTree and obj.GetName() == 'Runs':
+                otherObj.SetAutoFlush(0)
+                otherBranches = set([x.GetName()
+                                    for x in otherObj.GetListOfBranches()])
+                missingBranches = list(branchNames - otherBranches)
+                additionalBranches = list(otherBranches - branchNames)
+                print("missing: " + str(missingBranches) + "\n Additional:" + str(additionalBranches))
+                for br in missingBranches:
+                    # fill "Other"
+                    zeroFill(otherObj, br, obj.GetListOfBranches(
+                    ).FindObject(br), allowNonBool=True)
+                for br in additionalBranches:
+                    # fill main
+                    branchNames.add(br)
+                    zeroFill(obj, br, otherObj.GetListOfBranches(
+                    ).FindObject(br), allowNonBool=True)
+                # merge immediately for trees
+            if isTree:
+                obj.Merge(inputs, "fast" if goFast else "")
+                inputs.Clear()
+        else:
+            print('!!!!! missing ' + name + ' in file ' + fh.GetName()+' !!!!!!!!')
+
 
     if isTree:
         obj.Write()

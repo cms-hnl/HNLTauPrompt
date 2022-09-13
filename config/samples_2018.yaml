@@ -169,9 +169,9 @@ EGamma_2018B:
 EGamma_2018C:
   nanoAOD: /EGamma/Run2018C-UL2018_MiniAODv2_NanoAODv9-v1/NANOAOD
   sampleType: data
-EGamma_2018D:
-  nanoAOD: /EGamma/Run2018D-UL2018_MiniAODv2_NanoAODv9-v3/NANOAOD
-  sampleType: data
+#EGamma_2018D:
+#  nanoAOD: /EGamma/Run2018D-UL2018_MiniAODv2_NanoAODv9-v3/NANOAOD
+#  sampleType: data
 #Tau
 Tau_2018A:
   nanoAOD: /Tau/Run2018A-UL2018_MiniAODv2_NanoAODv9-v1/NANOAOD

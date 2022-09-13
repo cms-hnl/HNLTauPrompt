@@ -21,7 +21,8 @@ class CountEvents(processor.ProcessorABC):
     def process(self, events):
         output = self.accumulator.identity()
         dataset = events.metadata['dataset']
-        if 'Data' not in dataset:
+        print('processing dataset: '+ dataset)
+        if '2018' not in dataset:
             output['sumw'][dataset] += ak.sum(events.genEventSumw)
         else:
             #For data samples, we need to find the original number of event in the unskimed file --> to be modified

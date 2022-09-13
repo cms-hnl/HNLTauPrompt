@@ -110,7 +110,7 @@ class HNLAnalysis(processor.ProcessorABC):
         print("For dataset : "+ ds)
 
         mode ='MCbackground'
-        if 'Data' in ds:
+        if '2018' in ds:
             # only keep the good runs
             goodrun_lumi = data_goodrun_lumi(ds)
             goodrun = goodrun_lumi[:,0]
@@ -151,16 +151,16 @@ class HNLAnalysis(processor.ProcessorABC):
         events['SelMuon'] = events.Muon[(events.Muon.pt > cut_mu_pt) & (np.abs(events.Muon.eta) < cut_mu_eta) & ((events.Muon.mediumId > cut_mu_id) | (events.Muon.tightId > cut_mu_id)) & (events.Muon.pfRelIso03_all < cut_mu_iso)]
 
         if mode == 'Data':
-            if 'Data_SingleMuon' in ds:
+            if 'SingleMuon' in ds:
                 print("Analysis of ttm tmm and tem(SS/OS) channel (IsoMu24 HLT)")
                 self.analyse_ttm(events, out, ds)
                 self.analyse_tmm(events, out, ds)
                 self.analyse_tem_SS(events, out, ds)
                 self.analyse_tem_OS(events, out, ds)
-            if 'Data_EGamma' in ds:
+            if 'EGamma' in ds:
                 print("Analysis of tee channel (Ele32 HLT)")
                 self.analyse_tee(events, out, ds)
-            if 'Data_Tau' in ds:
+            if 'Tau' in ds:
                 print("Analysis of tte channel (DoubleTau HLT)")
                 #self.analyse_ttt(events, out, ds)
                 self.analyse_tte(events, out, ds)

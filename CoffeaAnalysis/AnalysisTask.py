@@ -18,7 +18,7 @@ from run_tools.law_customizations import Task, HTCondorWorkflow
 
 class RunAnalysis(Task, HTCondorWorkflow, law.LocalWorkflow):
     # tag that will be added to produced pkl files and not mixt up with different analysis
-    tag = luigi.Parameter(default='TEST2')
+    tag = self.version
     # requires skimmed NanoAOD files produce with CreateNanoSkims task
     def workflow_requires(self):
         return {"Nano_Skim": CreateNanoSkims.req(self) }
