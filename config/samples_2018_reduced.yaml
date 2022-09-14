@@ -1,0 +1,187 @@
+GLOBAL:
+  period: '2018'
+
+#signal: HNL_tau_trilepton
+HNL_tau_M-100:
+  nanoAOD: /HeavyNeutrino_trilepton_M-100_V-0p01_tau_NLO_tauhFilter_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v2/NANOAODSIM
+  sampleType: HNL_tau
+  mass: 100
+  Vtau: 0.01
+HNL_tau_M-200:
+  nanoAOD: /HeavyNeutrino_trilepton_M-200_V-0p01_tau_NLO_tauhFilter_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v2/NANOAODSIM
+  sampleType: HNL_tau
+  mass: 200
+  Vtau: 0.01
+HNL_tau_M-300:
+  nanoAOD: /HeavyNeutrino_trilepton_M-300_V-0p01_tau_NLO_tauhFilter_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v2/NANOAODSIM
+  sampleType: HNL_tau
+  mass: 300
+  Vtau: 0.01
+HNL_tau_M-400:
+  nanoAOD: /HeavyNeutrino_trilepton_M-400_V-0p01_tau_NLO_tauhFilter_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v2/NANOAODSIM
+  sampleType: HNL_tau
+  mass: 400
+  Vtau: 0.01
+HNL_tau_M-500:
+  nanoAOD: /HeavyNeutrino_trilepton_M-500_V-0p01_tau_NLO_tauhFilter_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v2/NANOAODSIM
+  sampleType: HNL_tau
+  mass: 500
+  Vtau: 0.01
+HNL_tau_M-600:
+  nanoAOD: /HeavyNeutrino_trilepton_M-600_V-0p01_tau_NLO_tauhFilter_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v2/NANOAODSIM
+  sampleType: HNL_tau
+  mass: 600
+  Vtau: 0.01
+HNL_tau_M-700:
+  nanoAOD: /HeavyNeutrino_trilepton_M-700_V-0p01_tau_NLO_tauhFilter_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v2/NANOAODSIM
+  sampleType: HNL_tau
+  mass: 700
+  Vtau: 0.01
+HNL_tau_M-800:
+  nanoAOD: /HeavyNeutrino_trilepton_M-800_V-0p01_tau_NLO_tauhFilter_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v2/NANOAODSIM
+  sampleType: HNL_tau
+  mass: 800
+  Vtau: 0.01
+HNL_tau_M-900:
+  nanoAOD: /HeavyNeutrino_trilepton_M-900_V-0p01_tau_NLO_tauhFilter_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v2/NANOAODSIM
+  sampleType: HNL_tau
+  mass: 900
+  Vtau: 0.01
+HNL_tau_M-1000:
+  nanoAOD: /HeavyNeutrino_trilepton_M-1000_V-0p01_tau_NLO_tauhFilter_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v2/NANOAODSIM
+  sampleType: HNL_tau
+  mass: 1000
+  Vtau: 0.01
+
+#MC background (using [ dasgoclient -query="dataset=/{name_of_the_samples}_TuneCP5_13TeV*/RunIISummer20UL18NanoAOD*v9-106X*/NANOAODSIM"  ])
+#DY
+DYJets_To_LL_M-50-amcatnloFXFX:
+  nanoAOD: /DYJetsToLL_M-50_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v2/NANOAODSIM
+  sampleType: MC_background
+DYJets_To_LL_M-10to50:
+  nanoAOD: /DYJetsToLL_M-10to50_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1/NANOAODSIM
+  sampleType: MC_background
+
+#Electroweak
+EWK_WMinus2Jets_W_To_LNu_M-50:
+  nanoAOD: /EWKWMinus2Jets_WToLNu_M-50_TuneCP5_withDipoleRecoil_13TeV-madgraph-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v2/NANOAODSIM
+  sampleType: MC_background
+EWK_WPlus2Jets_W_To_LNu_M-50:
+  nanoAOD: /EWKWPlus2Jets_WToLNu_M-50_TuneCP5_withDipoleRecoil_13TeV-madgraph-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v2/NANOAODSIM
+  sampleType: MC_background
+EWK_Z2Jets_Z_To_LL_M-50:
+  nanoAOD: /EWKZ2Jets_ZToLL_M-50_TuneCP5_withDipoleRecoil_13TeV-madgraph-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v2/NANOAODSIM
+  sampleType: MC_background
+
+#TTbar
+TT_To_2L2Nu:
+  nanoAOD: /TTTo2L2Nu_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1/NANOAODSIM
+  sampleType: MC_background
+TT_To_SemiLeptonic:
+  nanoAOD: /TTToSemiLeptonic_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1/NANOAODSIM
+  sampleType: MC_background
+TT_To_Hadronic:
+  nanoAOD: /TTToHadronic_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1/NANOAODSIM
+  sampleType: MC_background
+
+#SingleTop
+ST_tW_antitop_5f_inclusiveDecays:
+  nanoAOD: /ST_tW_antitop_5f_inclusiveDecays_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v2/NANOAODSIM
+  sampleType: MC_background
+ST_tW_top_5f_inclusiveDecays:
+  nanoAOD: /ST_tW_top_5f_inclusiveDecays_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v2/NANOAODSIM
+  sampleType: MC_background
+ST_t-channel_antitop_4f_InclusiveDecays:
+  nanoAOD: /ST_t-channel_antitop_4f_InclusiveDecays_TuneCP5_13TeV-powheg-madspin-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1/NANOAODSIM
+  sampleType: MC_background
+ST_t-channel_top_4f_InclusiveDecays:
+  nanoAOD: /ST_t-channel_top_4f_InclusiveDecays_TuneCP5_13TeV-powheg-madspin-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1/NANOAODSIM
+  sampleType: MC_background
+
+# W+jets
+WJets_To_LNu:
+  nanoAOD: /WJetsToLNu_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1/NANOAODSIM
+  sampleType: MC_background
+
+#DiBoson
+ZZ:
+  nanoAOD: /ZZ_TuneCP5_13TeV-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1/NANOAODSIM
+  sampleType: MC_background
+WW:
+  nanoAOD: /WW_TuneCP5_13TeV-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1/NANOAODSIM
+  sampleType: MC_background
+WZ:
+  nanoAOD: /WZ_TuneCP5_13TeV-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1/NANOAODSIM
+  sampleType: MC_background
+
+#TT+bosons
+TTWJets_To_LNu:
+  nanoAOD: /TTWJetsToLNu_TuneCP5_13TeV-amcatnloFXFX-madspin-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1/NANOAODSIM
+  sampleType: MC_background
+TTZ_To_LLNuNu_M-10:
+  nanoAOD: /TTZToLLNuNu_M-10_TuneCP5_13TeV-amcatnlo-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1/NANOAODSIM
+  sampleType: MC_background
+TTWW:
+  nanoAOD: /TTWW_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1/NANOAODSIM
+  sampleType: MC_background
+TTZZ:
+  nanoAOD: /TTZZ_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1/NANOAODSIM
+  sampleType: MC_background
+TTWZ:
+  nanoAOD: /TTWZ_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1/NANOAODSIM
+  sampleType: MC_background
+
+#TriBoson
+ZZZ:
+  nanoAOD: /ZZZ_TuneCP5_13TeV-amcatnlo-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1/NANOAODSIM
+  sampleType: MC_background
+WZZ:
+  nanoAOD: /WZZ_TuneCP5_13TeV-amcatnlo-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1/NANOAODSIM
+  sampleType: MC_background
+WWZ_4F:
+  nanoAOD: /WWZ_4F_TuneCP5_13TeV-amcatnlo-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1/NANOAODSIM
+  sampleType: MC_background
+WWW_4F:
+  nanoAOD: /WWW_4F_TuneCP5_13TeV-amcatnlo-pythia8/RunIISummer20UL18NanoAODv9-106X_upgrade2018_realistic_v16_L1v1-v1/NANOAODSIM
+  sampleType: MC_background
+
+#Data (using [ dasgoclient -query="dataset=/{name_of_the_trigger}/Run2018*UL*MiniAODv2_NanoAODv9-v*/NANOAOD"  ])
+#SingleMuon
+SingleMuon_2018A:
+  nanoAOD: /SingleMuon/Run2018A-UL2018_MiniAODv2_NanoAODv9-v2/NANOAOD
+  sampleType: data
+SingleMuon_2018B:
+  nanoAOD: /SingleMuon/Run2018B-UL2018_MiniAODv2_NanoAODv9-v2/NANOAOD
+  sampleType: data
+SingleMuon_2018C:
+  nanoAOD: /SingleMuon/Run2018C-UL2018_MiniAODv2_NanoAODv9-v2/NANOAOD
+  sampleType: data
+SingleMuon_2018D:
+  nanoAOD: /SingleMuon/Run2018D-UL2018_MiniAODv2_NanoAODv9-v1/NANOAOD
+  sampleType: data
+#EGamma
+EGamma_2018A:
+  nanoAOD: /EGamma/Run2018A-UL2018_MiniAODv2_NanoAODv9-v1/NANOAOD
+  sampleType: data
+EGamma_2018B:
+  nanoAOD: /EGamma/Run2018B-UL2018_MiniAODv2_NanoAODv9-v1/NANOAOD
+  sampleType: data
+EGamma_2018C:
+  nanoAOD: /EGamma/Run2018C-UL2018_MiniAODv2_NanoAODv9-v1/NANOAOD
+  sampleType: data
+#EGamma_2018D:
+#  nanoAOD: /EGamma/Run2018D-UL2018_MiniAODv2_NanoAODv9-v3/NANOAOD
+#  sampleType: data
+#Tau
+Tau_2018A:
+  nanoAOD: /Tau/Run2018A-UL2018_MiniAODv2_NanoAODv9-v1/NANOAOD
+  sampleType: data
+Tau_2018B:
+  nanoAOD: /Tau/Run2018B-UL2018_MiniAODv2_NanoAODv9-v1/NANOAOD
+  sampleType: data
+Tau_2018C:
+  nanoAOD: /Tau/Run2018C-UL2018_MiniAODv2_NanoAODv9-v1/NANOAOD
+  sampleType: data
+Tau_2018D:
+  nanoAOD: /Tau/Run2018D-UL2018_MiniAODv2_NanoAODv9-v2/NANOAOD
+  sampleType: data
